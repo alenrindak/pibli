@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paket Omni</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <style>
+        .list-group {
+            width: 90%;
+            margin: 0 auto;
+            margin-top: 70px;
+            
+        }
+
+        .promo {
+            color: rgb(212, 9, 9);
+        }
+
+    
+        body {
+            height: 100%;
+        }
+
+        body {
+            background: radial-gradient(ellipse at center, rgba(255, 254, 234, 1) 0%, rgba(255, 254, 234, 1) 35%, #B7E8EB 100%);
+            overflow: hidden;
+        }
+
+    
+
+        .alert {
+            width: 90%;
+            margin: 0 auto;
+            text-align: center;
+            padding: 20px;
+            background-color: #f44336;
+            color: white;
+        }
+
+        .closebtn {
+            margin-left: 15px;
+            color: white;
+            font-weight: bold;
+            float: right;
+            font-size: 22px;
+            line-height: 20px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .closebtn:hover {
+            color: black;
+        }
+        .background--custom {
+        background-color: #FFFFFF;
+        width: 100vw;
+        height: 100vh;
+        position: absolute;
+        overflow: hidden;
+        z-index: -2;
+        top: 0;
+        left: 0;
+      }
+      canvas#canvas {
+        z-index: -1;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        transform: rotate(0deg) scale(2) translateY(0%);
+        --gradient-color-1: #ef008f; 
+        --gradient-color-2: #6ec3f4; 
+        --gradient-color-3: #7038ff;  
+        --gradient-color-4: #ffba27;
+        --gradient-speed: 0.000006;
+      }
+    </style>
+</head>
+
+<body>
+    <div class="background--custom">
+        <canvas id="canvas" />
+      </div>
+      <script src="https://cdn.jsdelivr.net/gh/greentfrapp/pocoloco@minigl/minigl.js"></script>
+      <script>
+      var gradient = new Gradient();
+      gradient.initGradient("#canvas");
+      </script>
+    <br>
+    <br>
+    <div class="alert">
+        <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+        <strong>Silahkan Pilih Jenis Paket</strong>
+    </div>
+
+    <div class="list-group">
+        <a href="https://piblisuperapp.olshopku.com/digital/272685" class="list-group-item list-group-item-action "
+            aria-current="true">
+            <div class="d-flex w-100 justify-content-between">
+                <h5 class="mb-1">Byu Data Harian</h5>
+                <small class="promo">Promo</small>
+            </div>
+            <p class="mb-1">Data Harian 1x24 Jam</p>
+            <small>Harga Lebih murah Sesuai Kebutuhan</small>
+        </a>
+        <a href="https://piblisuperapp.olshopku.com/digital/272708" class="list-group-item list-group-item-action">
+            <div class="d-flex w-100 justify-content-between">
+                <h5 class="mb-1">Byu Data Bulanan</h5>
+                <small class="promo">Promo</small>
+            </div>
+            <p class="mb-1">Data Untuk 30 hari</p>
+            <small>Kuota Lebih banyak Tetap murah</small>
+        </a>
+        <a href="https://piblisuperapp.olshopku.com/digital/272710" class="list-group-item list-group-item-action">
+            <div class="d-flex w-100 justify-content-between">
+                <h5 class="mb-1">Byu Data Unlimited</h5>
+                <small class="promo">Promo</small>
+            </div>
+            <p class="mb-1">Data Unlimited Byu berbatas Waktu</p>
+            <small>Pilih jangka waktu kuota aktif</small>
+        </a>
+        <a href="https://piblisuperapp.olshopku.com/digital/272712" class="list-group-item list-group-item-action">
+            <div class="d-flex w-100 justify-content-between">
+                <h5 class="mb-1">Byu Data Topping</h5>
+                <small class="promo">Promo</small>
+            </div>
+            <p class="mb-1">Data Topping Byu Promo</p>
+            <small>Kuota Topping Sosial Media</small>
+        </a>
+    </div>
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>
