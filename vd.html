@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Contoh Pemutar Video HTML</title>
+    <style>
+      .video-container {
+        position: relative;
+        padding-bottom: 56.25%;
+        height: 0;
+        overflow: hidden;
+      }
+
+      .video-container video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+
+      .controls {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 10px;
+      }
+
+      .play-pause-btn {
+        background-color: #fff;
+        border: none;
+        padding: 10px;
+        margin-right: 5px;
+        cursor: pointer;
+        border-radius: 50%;
+        box-shadow: 0 2px 2px rgba(0, 0, 0, 0.25);
+        transition: all 0.2s ease-in-out;
+      }
+
+      .play-pause-btn:hover {
+        background-color: #e0e0e0;
+      }
+
+      .volume-slider {
+        -webkit-appearance: none;
+        width: 100%;
+        height: 5px;
+        border-radius: 5px;
+        background-color: #e0e0e0;
+        outline: none;
+        opacity: 0.7;
+        transition: opacity 0.2s ease-in-out;
+      }
+
+      .volume-slider::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        background-color: #fff;
+        border: 1px solid #e0e0e0;
+        cursor: pointer;
+        box-shadow: 0 2px 2px rgba(0, 0, 0, 0.25);
+        transition: all 0.2s ease-in-out;
+      }
+
+      .volume-slider:hover {
+        opacity: 1;
+      }
+
+      .volume-slider:hover::-webkit-slider-thumb {
+        background-color: #e0e0e0;
+        border-color: #fff;
+      }
+.duration-slider {
+        -webkit-appearance: none;
+        width: 100%;
+        height: 5px;
+        border-radius: 5px;
+        background-color: #e0e0e0;
+        outline: none;
+        opacity: 0.7;
+        transition: opacity 0.2s ease-in-out;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="video-container">
+      <video controls>
+        <source src="1.mp4" type="video/mp4" />
+      </video>
+    </div>
+    <div class="controls">
+      <button class="play-pause-btn">
+        <img
+          src="https://img.icons8.com/material-rounded/24/000000/play--v1.png"
+        />
+      </button>
+      <input type="range" min="0" max="100" value="50" class="volume-slider" />
+    </div>
+<input type="range" min="0" max="100" value="" class="duration-slider" />
+
+
+    <script>
+      // Ambil elemen video player
+      const videoPlayer = document.querySelector("video");
+
+      // Ambil elemen tombol play/pause
+      const playPauseBtn = document.querySelector(".play-pause-btn");
+
+      // Ambil elemen slider volume
+      const volumeSlider = document.querySelector(".volume-slider");
+
+      // Ambil elemen slider durasi
+      const durationSlider = document.querySelector(".duration-slider");
+
+      // Fungsi untuk memainkan atau menghentikan video
+      function togglePlay() {
+        if (videoPlayer.paused) {
+          videoPlayer.play();
+          playPauseBtn.innerHTML = `<img src="https://img.icons8.com/material-rounded/24/000000/pause--v1.png" />`;
+        } else {
+          videoPlayer.pause();
+          playPauseBtn.innerHTML = `<img src="https://img.icons8.com/material-rounded/24/000000/play--v1.png" />`;
+        }
+      }
+
+      // Fungsi untuk mengubah volume video
+      function changeVolume() {
+        videoPlayer.volume = volumeSlider.value / 100;
+      }
+
+      // Fungsi untuk mengubah durasi video
+      function changeDuration() {
+        videoPlayer.currentTime =
+          (durationSlider.value / 100) * videoPlayer.duration;
+      }
+
+      // Tambahkan event listener ke tombol play/pause
+      playPauseBtn.addEventListener("click", togglePlay);
+
+      // Tambahkan event listener ke slider volume
+      volumeSlider.addEventListener("input", changeVolume);
+
+      // Tambahkan event listener ke slider durasi
+      durationSlider.addEventListener("input", changeDuration);
+
+      // Update slider durasi saat video sedang dimainkan
+      videoPlayer.addEventListener("timeupdate", function () {
+        const progress = (videoPlayer.currentTime / videoPlayer.duration) * 100;
+        durationSlider.value = progress;
+      });
+    </script>
+  </body>
+</html>

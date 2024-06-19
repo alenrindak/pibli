@@ -1,0 +1,949 @@
+<!doctype html>
+<html lang="en">
+
+<head> <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <style type="text/css" media="all">
+    /* CSS HEADER */
+    .class-header {
+      top: 0;
+      left: 0;
+      position: fixed;
+      z-index: 10;
+      width: 100%;
+    }
+
+    .jarak-header {
+      width: 100%;
+      height: 15rem;
+    }
+
+    .konten_bg {
+      width: 100%;
+      min-height: 50px;
+      top: 0;
+      left: 0;
+      background-color: #1976D2;
+    }
+
+    .konten_header {
+      width: 100%;
+      height: 100%;
+      left: 0;
+      border-top-left-radius: 30px;
+      border-top-right-radius: 30px;
+      margin-top: -10%;
+      background-color: white;
+    }
+
+    .input_konten {
+      width: 100%;
+      height: auto;
+      padding-top: 2%;
+    }
+
+    .input_konten p {
+      margin-top: 5%;
+      margin-left: 2.5%;
+      opacity: 0.8;
+    }
+
+    .input_konten span {
+      margin-left: 2.5%;
+      font-size: 0.7rem;
+      opacity: 0.8;
+    }
+
+    .input_konten input {
+      margin-top: -7%;
+      width: 95%;
+      border: none;
+      border-bottom: 1px solid #9a9a9a;
+      font-size: 18px;
+      margin-left: 2.5%;
+      padding-top: 2%;
+      padding-bottom: 2%;
+      outline: none;
+      font-weight: bold;
+      opacity: 0.9;
+    }
+
+    .notice {
+      font-size: 1rem;
+      padding-left: 5%;
+      opacity: 0.8;
+      float: left;
+      clear: both;
+    }
+
+    #img_operator {
+      position: absolute;
+      width: 7%;
+      height: auto;
+      margin-left: -16%;
+      z-index: 4;
+    }
+
+    .img_kontak {
+      position: absolute;
+      width: 7%;
+      height: auto;
+      margin-left: -6%;
+      z-index: 5;
+    }
+
+    /* produk */
+    .bgcardData {
+      background-color: white;
+      height: auto;
+    }
+
+    .cardData {
+      width: 90%;
+      margin-left: 5%;
+    }
+
+    .pHarga {
+      width: 100%;
+      min-height: 75px;
+      border: 1px solid rgb(223, 223, 223);
+      border-radius: 5px;
+      border-bottom-left-radius: 0px;
+      border-bottom-right-radius: 0px;
+    }
+
+    .pHarga h3 {
+      margin-left: 5%;
+      color: #131313;
+      font-size: 1rem;
+      margin-top: 5%;
+      margin-right: 5%;
+      opacity: 0.7;
+    }
+
+    .pHarga h4 {
+      margin-left: 5%;
+      color: #26a69a;
+      font-size: 0.9rem;
+    }
+
+    .textKeterangan {
+      border: 1px solid rgb(223, 223, 223);
+      border-top-color: transparent;
+      width: 100%;
+    }
+
+    .textKeterangan p {
+      margin-left: 5%;
+      margin-right: 5%;
+      font-size: 9rem;
+      color: #9e9e9e;
+      padding-top: 0%;
+    }
+
+    .cardShow p {
+      text-align: center;
+      margin-top: -2%;
+      font-size: 0.8rem;
+      color: #26a69a;
+      padding-top: 3.5%;
+      padding-bottom: 3%;
+      width: 100%;
+      border: 1px solid rgb(223, 223, 223);
+      border-top-color: transparent;
+      border-radius: 5px;
+      border-top-left-radius: 0px;
+      border-top-right-radius: 0px;
+      height: auto;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .deskripsiProduk {
+      width: 100%;
+      height: auto;
+      border: 1px solid rgb(223, 223, 223);
+      border-top: none;
+      padding: 2%;
+      padding-left: 4%;
+      padding-right: 4%;
+      display: none;
+    }
+
+    .deskripsiProduk p {
+      font-size: 0.85rem;
+      opacity: 0.8;
+    }
+
+    /* LIST KATEGORI */
+    .bgslide {
+      width: 100%;
+      margin-left: 0%;
+      overflow: hidden;
+      overflow-x: hidden;
+    }
+
+    .slider {
+      display: flex;
+      width: 100%;
+      margin-left: 0%;
+      overflow-x: auto;
+      scroll-snap-type: mandatory;
+      scroll-behavior: smooth;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .slider::-webkit-scrollbar {
+      width: 105%;
+      margin-left: -2.5%;
+      margin-right: 2.5%;
+    }
+
+    .slider::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    .header-nav {
+      min-width: 110px;
+      min-height: 40px;
+      border: 1px solid rgb(223, 223, 223);
+      text-align: center;
+      margin-left: 2%;
+      margin-right: 2%;
+      margin-top: 5%;
+      display: table;
+      border-radius: 5px;
+    }
+
+    .header-nav h2 {
+      display: table-cell;
+      font-size: 0.8rem;
+      vertical-align: middle;
+      color: black;
+      opacity: 0.8;
+    }
+
+    #klikAktiv {
+      background-color: orange;
+      color: white;
+      border-radius: 5px;
+    }
+
+    .bg_head {
+      width: 100%;
+      min-height: 80px;
+      background-color: white;
+      padding-right: 1%;
+      border-bottom: 1px solid rgb(223, 223, 223);
+    }
+
+    /* body konten */
+    .body-konten {
+      width: 100%;
+      height: auto;
+    }
+
+    .bg-div-offcanvas {
+      width: 100%;
+      height: auto;
+      margin-top: -3%;
+    }
+
+    .bg-div-offcanvas p {
+      margin-top: -5%;
+      font-size: 0.8rem;
+      opacity: 0.8;
+    }
+
+    /* Cekout order */
+    .cekOut-Order {
+      width: 100%;
+      height: 7rem;
+      bottom: 0;
+      left: 0;
+      position: fixed;
+      z-index: 10;
+      border-top: 1px solid rgb(223, 223, 223);
+      background-color: white;
+    }
+
+    .img-cekout {
+      width: 20%;
+      height: auto;
+      float: left;
+      padding: 1%;
+      text-align: right;
+      margin-left: -3%;
+      margin-bottom: -1rem;
+      padding-top: 2%;
+    }
+
+    .img-cekout img {
+      width: 50%;
+      height: auto;
+    }
+
+    .text-cekout {
+      width: 70%;
+      float: left;
+      padding: 1%;
+      padding-top: 2%;
+      margin-bottom: 0;
+      margin-bottom: -1rem;
+    }
+
+    .text-cekout h1 {
+      font-size: 0.9rem;
+      opacity: 0.8;
+      margin-bottom: 0;
+    }
+
+    .text-cekout p {
+      font-size: 0.7rem;
+      opacity: 0.8;
+    }
+
+    .btn-cekout {
+      clear: both;
+      width: 100%;
+      padding: 0;
+      margin: 0;
+      text-align: center;
+    }
+
+    .btn-cekout {
+      margin-top: 0;
+      width: 90%;
+      height: 3rem;
+      margin-left: 5%;
+      text-align: center;
+      background-color: #26a69a;
+      border-radius: 5px;
+    }
+
+    .btn-btn {
+      width: 50%;
+      float: left;
+      height: 3rem;
+      text-align: right;
+      padding-right: 2%;
+      color: white;
+      display: table;
+      padding-top: 0.8rem;
+    }
+
+    .btn-cekout h1 {
+      font-size: 1rem;
+    }
+
+    .btn-btn-btn {
+      float: left;
+      width: 50%;
+      height: 3rem;
+      height: auto;
+      text-align: left;
+      color: white;
+      padding-top: 0.8rem;
+    }
+
+    #btn-fungsion {
+      display: none;
+    }
+
+    #kategoriIndosat,
+    #kategoriSimpati,
+    #kategoriAxis,
+    #kategoriTri,
+    #kategoriXl {
+      display: none;
+    }
+
+    #produkPaketIndosat,
+    #produkPaketSimpati,
+    #produkPaketTri,
+    #produkPaketAxis,
+    #produkPaketXl {
+      display: none;
+    }
+
+    .body-konten {
+      width: 100%;
+      height: auto;
+    }
+
+    .container-body {
+      width: 100%;
+      text-align: center;
+      margin-top: 5%;
+    }
+
+    .container-body img {
+      width: 50%;
+      height: auto;
+    }
+
+    .container-body h2 {
+      font-size: 1rem;
+      opacity: 0.9;
+      color: #26a69a;
+      font-weight: bold;
+    }
+
+    .container-body p {
+      font-size: 0.8rem;
+      opacity: 0.7;
+      color: #26a69a;
+      margin-bottom: -1%;
+    }
+
+    #spinner_load {
+      opacity: 0.6;
+    }
+
+    #nonaktif-konten {
+      display: none;
+    }
+  </style>
+  <link rel="stylesheet" href="https://work.e-saku.id/esaku.css" type="text/css" media="all" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <title>Paket Internet</title>
+
+<body>
+  <section class="class-header"> <!-- BAGIAN input -->
+    <div class="konten_bg"> </div>
+    <div class="container konten_header">
+      <form class="input_konten" action="" method="get" accept-charset="utf-8">
+        <p>Masukkan Nomor Tujuan</p>
+        <input class="{{hasil_kontak}}" type="text" name="nomor" id="nomor" placeholder="Contoh : 08XX XXXX"
+          oninput="cekNomorTelponUser()" value="" />
+        <img id="img_operator" src="https://www.piblisuperapp.my.id/gbr/2.png" alt="" />
+        <a href="htps://piblisuperapp.tokowebku.com/ambil_kontak">
+          <img class="img_kontak" src="https://reservebukaolshop.nos.jkt-1.neo.id/70913/804346222i.jpg"
+            alt="icon kontak" /> </a>
+        <span id="operatorPulsa">OPERATOR</span>
+      </form>
+    </div>
+    <div id="spinner_load" class="text-center">
+      <div class="spinner-border" role="status"> <span class="visually-hidden">Loading Data...</span> </div>
+    </div> <!-- THIS IS A BODY -->
+    <section id="E500" class="body-konten">
+      <div class="container-body"> <img src="https://bukaolshop.s3-id-jkt-1.kilatstorage.id/70913/705972909i.jpg"
+          alt="" />
+        <h2>Tidak Ada Data</h2>
+        <p>masukkan nomor telpon tujuan</p>
+        <p>terlebih dahulu!</p>
+      </div>
+    </section> <!-- THIS A KETEGORI INDOSAT-->
+    <section id="kategoriIndosat">
+      <section class="bg_head">
+        <div class="bgslide">
+          <div class="slider">
+            <div class="header-nav" onclick="okategori1()">
+              <h2 class="esaku-effect" id="kategoriIndosat1">All Paket</h2>
+            </div>
+            <div class="header-nav" onclick="okategori2()">
+              <h2 class="esaku-effect" id="kategoriIndosat2">Umum</h2>
+            </div>
+            <div class="header-nav" onclick="okategori3()">
+              <h2 class="esaku-effect" id="kategoriIndosat3">Freedom Unlimited</h2>
+            </div>
+            <div class="header-nav" onclick="okategori4()">
+              <h2 class="esaku-effect" id="kategoriIndosat4">Freedom Combo</h2>
+            </div>
+            <div class="header-nav" onclick="okategori5()">
+              <h2 class="esaku-effect" id="kategoriIndosat5">Freedom Internet</h2>
+            </div>
+            <div class="header-nav" onclick="okategori6()">
+              <h2 class="esaku-effect" id="kategoriIndosat6">Mini</h2>
+            </div>
+            <div class="header-nav" onclick="okategori7()">
+              <h2 class="esaku-effect" id="kategoriIndosat7">Yellow</h2>
+            </div>
+          </div>
+        </div>
+      </section> <br />
+    </section> <!-- THIS A END KETEGORI INDOSAT--> <!-- THIS A KETEGORI SIMPATI-->
+    <section id="kategoriSimpati">
+      <section class="bg_head">
+        <div class="bgslide">
+          <div class="slider">
+            <div class="header-nav" onclick="skategori1()">
+              <h2 class="esaku-effect" id="kategoriSimpati1">All Paket</h2>
+            </div>
+            <div class="header-nav" onclick="skategori2()">
+              <h2 class="esaku-effect" id="kategoriSimpati2">Extra Combo</h2>
+            </div>
+            <div class="header-nav" onclick="skategori3()">
+              <h2 class="esaku-effect" id="kategoriSimpati3">Umum</h2>
+            </div>
+            <div class="header-nav" onclick="skategori4()">
+              <h2 class="esaku-effect" id="kategoriSimpati4">Unlimited</h2>
+            </div>
+            <div class="header-nav" onclick="skategori5()">
+              <h2 class="esaku-effect" id="kategoriSimpati5">Multimedia</h2>
+            </div>
+            <div class="header-nav" onclick="skategori6()">
+              <h2 class="esaku-effect" id="kategoriSimpati6">Max</h2>
+            </div>
+            <div id="nonaktif-konten" class="header-nav" onclick="skategori7()">
+              <h2 id="kategoriSimpati7">Umum</h2>
+            </div>
+          </div>
+        </div>
+      </section> <br />
+    </section> <!-- THIS A END KETEGORI SIMPATI--> <!-- THIS A KETEGORI AXIS-->
+    <section id="kategoriAxis">
+      <section class="bg_head">
+        <div class="bgslide">
+          <div class="slider">
+            <div class="header-nav" onclick="akategori1()">
+              <h2 id="kategoriAxis1">All Paket</h2>
+            </div>
+            <div class="header-nav" onclick="ategori2()">
+              <h2 class="esaku-effect" id="kategoriAxis2">Brownet</h2>
+            </div>
+            <div class="header-nav" onclick="akategori3()">
+              <h2 class="esaku-effect" id="kategoriAxis3">Mini</h2>
+            </div>
+            <div id="nonaktif-konten" class="header-nav" onclick="akategori4()">
+              <h2 class="esaku-effect" id="kategoriAxis4">nama kategori</h2>
+            </div>
+            <div id="nonaktif-konten" class="header-nav" onclick="akategori5()">
+              <h2 class="esaku-effect" id="kategoriAxis5">nama kategori</h2>
+            </div>
+            <div id="nonaktif-konten" class="header-nav" onclick="akategori6()">
+              <h2 class="esaku-effect" id="kategoriAxis6">nama kategori</h2>
+            </div>
+            <div id="nonaktif-konten" class="header-nav" onclick="akategori7()">
+              <h2 class="esaku-effect" id="kategoriAxis7">nama kategori</h2>
+            </div>
+          </div>
+        </div>
+      </section> <br />
+    </section> <!-- THIS A END KETEGORI AXIS--> <!-- THIS A KETEGORI TRI Tri-->
+    <section id="kategoriTri">
+      <section class="bg_head">
+        <div class="bgslide">
+          <div class="slider">
+            <div class="header-nav" onclick="tkategori1()">
+              <h2 class="esaku-effect" id="kategoriTri1">All Paket</h2>
+            </div>
+            <div class="header-nav" onclick="tkategori2()">
+              <h2 class="esaku-effect" id="kategoriTri2">AlwaysOn</h2>
+            </div>
+            <div class="header-nav" onclick="tkategori3()">
+              <h2 class="esaku-effect" id="kategoriTri3">Happy</h2>
+            </div>
+            <div class="header-nav" onclick="tkategori4()">
+              <h2 class="esaku-effect" id="kategoriTri4">Getmore</h2>
+            </div>
+            <div class="header-nav" onclick="tkategori5()">
+              <h2 class="esaku-effect" id="kategoriTri5">Lokal</h2>
+            </div>
+            <div class="header-nav" onclick="tkategori6()">
+              <h2 class="esaku-effect" id="kategoriTri6">Cicilan</h2>
+            </div>
+            <div id="nonaktif-konten" class="header-nav" onclick="tkategori7()">
+              <h2 class="esaku-effect" id="kategoriTri7">Umum</h2>
+            </div>
+          </div>
+        </div>
+      </section> <br />
+    </section> <!-- THIS A END KETEGORI TRI--> <!-- THIS A KETEGORI XL Xl-->
+    <section id="kategoriXl">
+      <section class="bg_head">
+        <div class="bgslide">
+          <div class="slider">
+            <div class="header-nav" onclick="xkategori1()">
+              <h2 class="esaku-effect" id="kategoriXl1">All Paket</h2>
+            </div>
+            <div class="header-nav" onclick="xkategori2()">
+              <h2 class="esaku-effect" id="kategoriXl2">Ekstra Combo</h2>
+            </div>
+            <div class="header-nav" onclick="xkategori3()">
+              <h2 class="esaku-effect" id="kategoriXl3">Ekstra Combo VIP</h2>
+            </div>
+            <div class="header-nav" onclick="xkategori4()">
+              <h2 class="esaku-effect" id="kategoriXl4">Mini</h2>
+            </div>
+            <div class="header-nav" onclick="xkategori5()">
+              <h2 class="esaku-effect" id="kategoriXl5">Soon</h2>
+            </div>
+            <div class="header-nav" onclick="xkategori6()">
+              <h2 class="esaku-effect" id="kategoriXl6">sonn</h2>
+            </div>
+            <div class="header-nav" onclick="xkategori7()">
+              <h2 class="esaku-effect" id="kategoriXl7">soon</h2>
+            </div>
+          </div>
+        </div>
+      </section> <br />
+    </section> <!-- THIS A END KETEGORI XL-->
+  </section>
+  <div class="jarak-header"></div> <!-- PRODUK PAKET INDOSAT -->
+  <section id="produkPaketIndosat">
+    <section id="produkIndosatKategori2" class="bgcardData"> </section>
+    <section id="produkIndosatKategori3" class="bgcardData"> </section>
+    <section id="produkIndosatKategori4" class="bgcardData"> </section>
+    <section id="produkIndosatKategori5" class="bgcardData"> </section>
+    <section id="produkIndosatKategori6" class="bgcardData"> </section>
+    <section id="produkIndosatKategori7" class="bgcardData"> </section>
+  </section> <!-- END PRODUK PAKET INDOSAT --> <!-- PRODUK PAKET SIMPATI -->
+  <section id="produkPaketSimpati"> <!-- KATEGORI NOMOR 1 DIBUAT DEFAULT YAITU UNTUK MENAMPILKAN SEMUA PRODUK -->
+    <section id="produkKategoriSimpati2" class="bgcardData"> </section>
+    <section id="produkKategoriSimpati3" class="bgcardData"> </section>
+    <section id="produkKategoriSimpati4" class="bgcardData"> </section>
+    <section id="produkKategoriSimpati5" class="bgcardData"> </section>
+    <section id="produkKategoriSimpati6" class="bgcardData"> </section>
+    <section id="produkKategoriSimpati7" class="bgcardData"> </section>
+  </section> <!-- END PRODUK PAKET SIMPATI --> <!-- PRODUK PAKET TRI Tri-->
+  <section id="produkPaketTri"> <!-- KATEGORI NOMOR 1 DIBUAT DEFAULT YAITU UNTUK MENAMPILKAN SEMUA PRODUK -->
+    <section id="produkKategoriTri2" class="bgcardData"> </section>
+    <section id="produkKategoriTri3" class="bgcardData"> </section>
+    <section id="produkKategoriTri4" class="bgcardData"> </section>
+    <section id="produkKategoriTri5" class="bgcardData"> </section>
+    <section id="produkKategoriTri6" class="bgcardData"> </section>
+    <section id="produkKategoriTri7" class="bgcardData"> </section>
+  </section> <!-- END PRODUK PAKET TRI --> <!-- PRODUK PAKET AXIS -->
+  <section id="produkPaketAxis">
+    <section id="produkKategoriAxis2" class="bgcardData"> </section>
+    <section id="produkKategoriAxis3" class="bgcardData"> </section>
+    <section id="produkKategoriAxis4" class="bgcardData"> </section>
+    <section id="produkKategoriAxis5" class="bgcardData"> </section>
+    <section id="produkKategoriAxis6" class="bgcardData"> </section>
+    <section id="produkKategoriAxis7" class="bgcardData"> </section>
+  </section> <!-- END PRODUK PAKET AXIS --> <!-- PRODUK PAKET XL Xl -->
+  <section id="produkPaketXl">
+    <section id="produkKategoriXl2" class="bgcardData"> </section>
+    <section id="produkKategoriXl3" class="bgcardData"> </section>
+    <section id="produkKategoriXl4" class="bgcardData"> </section>
+    <section id="produkKategoriXl5" class="bgcardData"> </section>
+    <section id="produkKategoriXl6" class="bgcardData"> </section>
+    <section id="produkKategoriXl7" class="bgcardData"> </section>
+  </section> <!-- END PRODUK PAKET XL --> <br /><br /><br /><br /><br />
+  <section id="btn-fungsion" class="cekOut-Order">
+    <div class="img-cekout"> <img src="https://bukaolshop.s3-id-jkt-1.kilatstorage.id/70913/128340285q.jpg" alt="" />
+    </div>
+    <div class="text-cekout">
+      <h1>PiPay PROTECTION</h1>
+      <p>Your Transaction is Protected, fast And Secure</p>
+    </div>
+    <div onclick="kirimDataBo()" class="btn-cekout">
+      <div class="btn-btn" type="button">
+        <h1>BAYAR</h1>
+      </div>
+      <div class="btn-btn-btn" type="button">
+        <h1 id="cetakHargaBarang"></h1>
+      </div>
+    </div>
+  </section>
+  <div class="offcanvas offcanvas-bottom" tabindex="-1" id="offcanvasBottom" aria-labelledby="offcanvasBottomLabel"
+    style="border-top-left-radius: 20px; border-top-right-radius: 20px;">
+    <div class="offcanvas-header tinggi-konten"> <!-- Konten header canvas !-->
+      <h5 style="font-size: 1.1rem; opacity:0.8;" class="offcanvas-title" id="offcanvasBottomLabel"> Detail Produk </h5>
+    </div>
+    <div class="offcanvas-body medium">
+      <div class="bg-div-offcanvas">
+        <p id="dataDeskripsi"></p>
+        <hr />
+      </div>
+    </div>
+  </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    crossorigin="anonymous"></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
+  <script src="https://work.e-saku.id/em.js"></script>
+  <script type="text/javascript" charset="utf-8">
+    let aktiv = "color: white; background-color: #2196f3; border-radius: 5px;";
+    let nonAktiv = "color: black; background-color: white; border-radius: 5px;";
+    function cekNomorTelponUser() {
+      let e500 = document.getElementById("E500");
+      let operatorPulsa = document.getElementById("operatorPulsa");
+      let b = document.getElementById("nomor").value;
+      let imgOperator = document.getElementById("img_operator");
+      let paketIndosat = document.getElementById("produkPaketIndosat");
+      let paketSimpati = document.getElementById("produkPaketSimpati");
+      let paketXl = document.getElementById("produkPaketXl");
+      let paketAxis = document.getElementById("produkPaketAxis");
+      let paketTri = document.getElementById("produkPaketTri");
+      let kateIndosat = document.getElementById("kategoriIndosat");
+      let kateSimpati = document.getElementById("kategoriSimpati");
+      let kateXl = document.getElementById("kategoriXl");
+      let kateAxis = document.getElementById("kategoriAxis");
+      let kateTri = document.getElementById("kategoriTri");
+      let x = b.replace(/[^0-9]/g).substring(0, 4);
+      if (x == null || x == ' ' || x < 4 || x == "") {
+        operatorPulsa.innerHTML = "OPERATOR";
+        paketIndosat.style.display = "none";
+        paketSimpati.style.display = "none";
+        paketXl.style.display = "none";
+        paketAxis.style.display = "none";
+        paketTri.style.display = "none";
+        kateIndosat.style.display = "none";
+        kateSimpati.style.display = "none";
+        kateXl.style.display = "none";
+        kateAxis.style.display = "none";
+        kateTri.style.display = "none";
+      } else if (x == 08) {
+        operatorPulsa.innerHTML = "OPERATOR";
+        imgOperator.src = "https://www.piblisuperapp.my.id/gbr/2.png";
+        paketIndosat.style.display = "none";
+        paketSimpati.style.display = "none";
+        paketXl.style.display = "none";
+        paketAxis.style.display = "none";
+        paketTri.style.display = "none";
+        E500.style.display = "block";
+        kateIndosat.style.display = "none";
+        kateSimpati.style.display = "none";
+        kateXl.style.display = "none";
+        kateAxis.style.display = "none";
+        kateTri.style.display = "none";
+      } else if (x == 0895 || x == 0896 || x == 0897 || x == 0898 || x == 0899) {
+        operatorPulsa.innerHTML = "TRI";
+        imgOperator.src = "https://reservebukaolshop.nos.jkt-1.neo.id/70913/742137058d.jpg";
+        paketTri.style.display = "block";
+        kateTri.style.display = "block";
+        E500.style.display = "none";
+      } else if (x == 0838 || x == 0831 || x == 0832 || x == 0833) {
+        operatorPulsa.innerHTML = "AXIS";
+        imgOperator.src = "https://reservebukaolshop.nos.jkt-1.neo.id/70913/810219098e.jpg";
+        paketAxis.style.display = "block";
+        kateAxis.style.display = "block";
+        E500.style.display = "none";
+      } else if (x == 0814 || x == 0815 || x == 0816 || x == 0855 || x == 0856 || x == 0857 || x == 0858) {
+        operatorPulsa.innerHTML = "INDOSAT";
+        imgOperator.src = "https://reservebukaolshop.nos.jkt-1.neo.id/70913/859438076d.jpg";
+        paketIndosat.style.display = "block";
+        kateIndosat.style.display = "block";
+        E500.style.display = "none";
+      } else if (x == 0818 || x == 0817 || x == 0819 || x == 0859 || x == 0877 || x == 0878) {
+        operatorPulsa.innerHTML = "XL";
+        imgOperator.src = "https://reservebukaolshop.nos.jkt-1.neo.id/70913/915306210e.jpg";
+        paketXl.style.display = "block";
+        kateXl.style.display = "block";
+        E500.style.display = "none";
+      } else if (x == 0881 || x == 0882 || x == 0883 || x == 0884 || x == 0885 || x == 0886 || x == 0887 || x == 0888 || x == 0889) {
+        operatorPulsa.innerHTML = "SMARTFREN";
+        imgOperator.src = "https://reservebukaolshop.nos.jkt-1.neo.id/70913/560788348y.jpg";
+        paketSmartfren.style.display = "block";
+        kateSmartfren.style.display = "block";
+        E500.style.display = "none";
+      } else if (x == 0811 || x == 0812 || x == 0813 || x == 0821 || x == 0822 || x == 0852 || x == 0853 || x == 0823 || x == 0851 || x == 0835) {
+        operatorPulsa.innerHTML = "TELKOMSEL";
+        imgOperator.src = "https://reservebukaolshop.nos.jkt-1.neo.id/70913/960556997o.jpg";
+        paketSimpati.style.display = "block";
+        kateSimpati.style.display = "block";
+        E500.style.display = "none";
+      } else if (x == 62) {
+        E500.style.display = "none";
+      }
+    }
+
+    let link = "";
+    function pilihBarang(harga, url) {
+      let cetakHarga = document.getElementById('cetakHargaBarang');
+      let btnKlik = document.getElementById('btn-fungsion');
+      btnKlik.style.display = "block";
+      cetakHarga.innerHTML = harga; l
+      ink = url;
+    }
+    document.getElementById('nomor').addEventListener('input', function (e) {
+      e.target.value = e.target.value.replace(/[^0-9]/g, '').replace(/(.{4})/g, '$1 ').substring(0, 17).trim();
+    });
+    var loading = document.getElementById("spinner_load");
+    var countuu = 0.1; function countDown() {
+      if (countuu > 0) {
+        countuu--;
+        setTimeout("countDown()", 1000);
+      } else {
+        loading.style.display = "none";
+      }
+    }
+
+    countDown();
+    function kirimDataBo() {
+      let inputUser = document.getElementById('nomor').value.replace(/\s+/g, '');
+      let linkUrl = link;
+      let catatan = "?catatan=";
+      if (inputUser.length < 10) {
+        alert('nomor kamu salah');
+      } else {
+        window.location.href = linkUrl + catatan + inputUser;
+      }
+    } </script>
+  <script type="text/javascript" charset="utf-8">
+    let pilNamaKateIndosat2 = ["Indosat 10 GB / 30 Hari", "Indosat 9 GB / 30 Hari", "Indosat 7 GB / 30 Hari", "Indosat 6 GB / 30 Hari", "Indosat 4 GB / 30 Hari", "Indosat 3 GB / 30 Hari", "Indosat 2 GB / 30 Hari", "Indosat 1 GB / 30 Hari", "Indosat 750 MB / 30 Hari", "Indosat 500 MB / 30 Hari", "Indosat 300 MB / 30 Hari", "Indosat 200 MB / 30 Hari", "Indosat 100 MB / 30 Hari",];
+    let pilHargaKateIndosat2 = ["Rp.51.100", "Rp.50.100", "Rp.48.100", "Rp.30.100", "Rp.25.600", "Rp.24.400", "Rp.15.200", "Rp.8.500", "Rp.7.100", "Rp.4.800", "Rp.3.600", "Rp.2.700", "Rp.2.300",];
+    let pilUrlKateIndosat2 = ["'https://piblisuperapp.tokowebku.com/produk/indosat-10-gb-30-hari-793497 '", "'https://piblisuperapp.tokowebku.com/produk/indosat-9-gb-30-hari-793501'", "'https://piblisuperapp.tokowebku.com/produk/indosat-7-gb-30-hari-793507'", "'https://piblisuperapp.tokowebku.com/produk/indosat-6-gb-30-hari-793513'", "'https://piblisuperapp.tokowebku.com/produk/indosat-4-gb-30-hari-793521'", "'https://piblisuperapp.tokowebku.com/produk/indosat-3-gb-30-hari-793531'", "'https://piblisuperapp.tokowebku.com/produk/indosat-2-gb-30-hari-793533'", "'https://piblisuperapp.tokowebku.com/produk/indosat-1-gb-30-hari-793535'", "'https://piblisuperapp.tokowebku.com/produk/indosat-750-mb-30-hari-793537'", "'https://piblisuperapp.tokowebku.com/produk/indosat-500-mb-30-hari-793542'", "'https://piblisuperapp.tokowebku.com/produk/indosat-300-mb-30-hari-793546'", "'https://piblisuperapp.tokowebku.com/produk/indosat-200-mb-30-hari-793548'", "'https://piblisuperapp.tokowebku.com/produk/indosat-100-mb-30-hari-793550'",];
+    let pilDeskripKateIndosat2 = ["'Indosat 10 GB / 30 Hari '", "'Indosat 9 GB / 30 Hari'", "'Indosat 7 GB / 30 Hari'", "'Indosat 6 GB / 30 Hari'", "'Indosat 4 GB / 30 Hari'", "'Indosat 3 GB / 30 Hari'", "'Indosat 2 GB / 30 Hari'", "'Indosat 1 GB / 30 Hari'", "'Indosat 750 MB / 30 Hari'", "'Indosat 500 MB / 30 Hari'", "'Indosat 300 MB / 30 Hari'", "'Indosat 200 MB / 30 Hari'", "'Indosat 100 MB / 30 Hari'",];
+    let pilNamaKateIndosat3 = ["Coming soon",];
+    let pilHargaKateIndosat3 = ["Rp.0",];
+    let pilUrlKateIndosat3 = ["' # '",];
+    let pilDeskripKateIndosat3 = ["' Soon '",];
+    let pilNamaKateIndosat4 = ["Coming soon",];
+    let pilHargaKateIndosat4 = ["Rp.0",];
+    let pilUrlKateIndosat4 = ["' # '",];
+    let pilDeskripKateIndosat4 = ["' Soon '",];
+    let pilNamaKateIndosat5 = ["Coming soon",];
+    let pilHargaKateIndosat5 = ["Rp.0",];
+    let pilUrlKateIndosat5 = ["' # '",];
+    let pilDeskripKateIndosat5 = ["' Soon '",];
+    let pilNamaKateIndosat6 = ["Coming soon",];
+    let pilHargaKateIndosat6 = ["Rp.0",];
+    let pilUrlKateIndosat6 = ["' # '",];
+    let pilDeskripKateIndosat6 = ["' soon '",];
+    let pilNamaKateIndosat7 = ["Coming soon",];
+    let pilHargaKateIndosat7 = ["Rp.0",];
+    let pilUrlKateIndosat7 = ["' # '",];
+    let pilDeskripKateIndosat7 = ["' soon '",];
+    let pilNamaKateSimpati2 = ["Telkomsel Combo 10GB / 30 Hari", "Telkomsel Combo Sakti 17 GB", "Telkomsel Combo Sakti 11 GB", "Telkomsel Combo Sakti 3 GB", "Telkomsel Combo Sakti 1,5 GB", "Telkomsel Data 2 Gb + 10 Gb Ruang Guru",];
+    let pilHargaKateSimpati2 = ["Rp.98.750", "Rp.83.000", "Rp.67.000 ", "Rp.28.500 ", "Rp.17.500 ", "Rp.44.500 ",];
+    let pilUrlKateSimpati2 = ["'https://piblisuperapp.tokowebku.com/produk/telkomsel-combo-10gb-30-hari-792410'", "'https://piblisuperapp.tokowebku.com/produk/telkomsel-combo-sakti-17-gb-794553'", "'https://piblisuperapp.tokowebku.com/produk/telkomsel-combo-sakti-11-gb-794560'", "'https://piblisuperapp.tokowebku.com/produk/telkomsel-combo-sakti-3-gb-794565'", "'https://piblisuperapp.tokowebku.com/produk/telkomsel-combo-sakti-1-5-gb-794573'", "'https://piblisuperapp.tokowebku.com/produk/telkomsel-data-2-gb-10-gb-ruang-guru-918361'",];
+    let pilDeskripKateSimpati2 = ["' Telkomsel Combo 10GB / 30 Hari '", "'Telkomsel Combo Sakti 17 GB'", "'Telkomsel Combo Sakti 11 GB'", "'Telkomsel Combo Sakti 3 GB'", "'Telkomsel Combo Sakti 1,5 GB'", "'Telkomsel Data 2 Gb + 10 Gb Ruang Guru'",];
+    let pilNamaKateSimpati3 = ["Telkomsel Data 7 GB + 28 GB Videomax / 30 Hari", "Telkomsel Data 3 GB + 12 GB Videomax / 30 Hari", "Telkomsel Data 1 GB + 5 GB Videomax / 30 Hari", "Telkomsel Data 15 GB + 40 GB Videomax / 30 Hari", "Telkomsel Data 500 MB / 30 Hari",];
+    let pilHargaKateSimpati3 = ["Rp.96.500 ", " Rp.48.500 ", " Rp.24.600 ", " Rp.145.750 ", " Rp.6.000 ",];
+    let pilUrlKateSimpati3 = ["'https://piblisuperapp.tokowebku.com/produk/telkomsel-data-7-gb-28-gb-videomax-30-hari-792416'", "'https://piblisuperapp.tokowebku.com/produk/telkomsel-data-3-gb-12-gb-videomax-30-hari-792421'", "'https://piblisuperapp.tokowebku.com/produk/telkomsel-data-1-gb-5-gb-videomax-30-hari-792424'", "'https://piblisuperapp.tokowebku.com/produk/telkomsel-data-15-gb-40-gb-videomax-30-hari-792428'", "'https://piblisuperapp.tokowebku.com/produk/telkomsel-data-500-mb-30-hari-792430'",];
+    let pilDeskripKateSimpati3 = ["'Telkomsel Data 7 GB + 28 GB Videomax / 30 Hari'", "'Telkomsel Data 3 GB + 12 GB Videomax / 30 Hari'", "'Telkomsel Data 1 GB + 5 GB Videomax / 30 Hari'", "'Telkomsel Data 15 GB + 40 GB Videomax / 30 Hari'", "'Telkomsel Data 500 MB / 30 Hari'",];
+    let pilNamaKateSimpati4 = ["Coming soon",];
+    let pilHargaKateSimpati4 = ["Rp.0",];
+    let pilUrlKateSimpati4 = ["' # '",];
+    let pilDeskripKateSimpati4 = ["' # '",];
+    let pilNamaKateSimpati5 = ["Coming soon",];
+    let pilHargaKateSimpati5 = ["Rp.0",];
+    let pilUrlKateSimpati5 = ["' # '",];
+    let pilDeskripKateSimpati5 = ["' # '",];
+    let pilNamaKateSimpati6 = ["Coming soon",];
+    let pilHargaKateSimpati6 = ["Sold Out",];
+    let pilUrlKateSimpati6 = ["' # '",];
+    let pilDeskripKateSimpati6 = ["' soon '",];
+    let pilNamaKateSimpati7 = ["Coming soon",];
+    let pilHargaKateSimpati7 = ["Coming soon",];
+    let pilUrlKateSimpati7 = ["' # '",];
+    let pilDeskripKateSimpati7 = ["' # '",];
+    let pilNamaKateTri2 = ["Soon",];
+    let pilHargaKateTri2 = ["Soon",];
+    let pilUrlKateTri2 = ["' # '",];
+    let pilDeskripKateTri2 = ["' Soon '",];
+    let pilNamaKateTri3 = ["Soon",];
+    let pilHargaKateTri3 = ["Soon",];
+    let pilUrlKateTri3 = ["' # '",];
+    let pilDeskripKateTri3 = ["' Soon '",];
+    let pilNamaKateTri4 = ["Soon",];
+    let pilHargaKateTri4 = ["Soon",];
+    let pilUrlKateTri4 = ["' # '",];
+    let pilDeskripKateTri4 = ["' Soon '",];
+    let pilNamaKateTri5 = ["Soon ",];
+    let pilHargaKateTri5 = ["Soon",];
+    let pilUrlKateTri5 = ["' # '",];
+    let pilDeskripKateTri5 = ["' Soon '",];
+    let pilNamaKateTri6 = ["Soon",];
+    let pilHargaKateTri6 = ["Sold Out",];
+    let pilUrlKateTri6 = ["' # '",];
+    let pilDeskripKateTri6 = ["' soon '",];
+    let pilNamaKateTri7 = ["Soon",];
+    let pilHargaKateTri7 = ["Soon",];
+    let pilUrlKateTri7 = ["' # '",];
+    let pilDeskripKateTri7 = ["' Soon '",];
+
+    let pilNamaKateAxis2 = ["Axis Bronet 16 GB 60 Hari", "Axis Bronet 50 GB 30 Hari", "Axis Bronet 25 GB 30 Hari", "Axis Bronet 16 GB 30 Hari", "Axis Bronet 10 GB 30 Hari", "Axis Bronet 8 GB 30 Hari", "Axis Bronet 5 GB 30 Hari", "Axis Bronet 1 GB 30 Hari", "Axis Bronet 1,5 GB 7 Hari", "Axis Bronet 500 MB 1 Hari",];
+    let pilHargaKateAxis2 = ["Rp.109.600", "Rp.135.100", "Rp.87.100", "Rp.80.100", "Rp.58.000", "Rp.43.600", "Rp.29.500", "Rp.13.400", "Rp.15.500", "Rp.9.000",];
+    let pilUrlKateAxis2 = ["'https://piblisuperapp.tokowebku.com/produk/axis-bronet-16-gb-60-hari-795413'", "'https://piblisuperapp.tokowebku.com/produk/axis-bronet-50-gb-30-hari-795414'", "'https://piblisuperapp.tokowebku.com/produk/axis-bronet-25-gb-30-hari-795416'", "'https://piblisuperapp.tokowebku.com/produk/axis-bronet-16-gb-30-hari-795418'", "'https://piblisuperapp.tokowebku.com/produk/axis-bronet-10-gb-30-hari-795420'", "'https://piblisuperapp.tokowebku.com/produk/axis-bronet-8-gb-30-hari-795425'", "'https://piblisuperapp.tokowebku.com/produk/axis-bronet-5-gb-30-hari-795426'", "'https://piblisuperapp.tokowebku.com/produk/axis-bronet-1-gb-30-hari-795428'", "'https://piblisuperapp.tokowebku.com/produk/axis-bronet-1-5-gb-7-hari-795431'", "'https://piblisuperapp.tokowebku.com/produk/axis-bronet-500-mb-1-hari-795434'",];
+
+    let pilDeskripKateAxis2 = ["'Axis Bronet 16 GB 60 Hari'", "'Axis Bronet 50 GB 30 Hari'", "'Axis Bronet 25 GB 30 Hari'", "'Axis Bronet 16 GB 30 Hari'", "'Axis Bronet 10 GB 30 Hari'", "'Axis Bronet 8 GB 30 Hari'", "'Axis Bronet 5 GB 30 Hari'", "'Axis Bronet 1 GB 30 Hari'", "'Axis Bronet 1,5 GB 7 Hari'", "'Axis Bronet 500 MB 1 Hari'",];
+    let pilNamaKateAxis3 = ["Axis Data Mini 5 GB / 15 Hari", "Axis Data Mini 3 GB / 15 Hari", "Axis Data Mini 10 GB / 7 Hari", "Axis Data Mini 5 GB / 7 Hari", "Axis Data Mini 1 GB / 7 Hari", "Axis Data Mini 5 GB / 5 Hari", "Axis Data Mini 1,5 GB / 5 Hari", "Axis Data Mini 4 GB / 3 Hari", "Axis Data Mini 1,5 GB / 3 Hari",];
+    let pilHargaKateAxis3 = ["Rp.31.600 ", "Rp.20.100 ", "Rp.30.600 ", "Rp.23.100 ", "Rp.12.600 ", "Rp.18.000 ", "Rp.9.100 ", "Rp.14.500 ", "Rp.7.000 ",];
+    let pilUrlKateAxis3 = ["'https://piblisuperapp.tokowebku.com/produk/axis-data-mini-5-gb-15-hari-795353'", "'https://piblisuperapp.tokowebku.com/produk/axis-data-mini-3-gb-15-hari-795355'", "'https://piblisuperapp.tokowebku.com/produk/axis-data-mini-10-gb-7-hari-795358'", "'https://piblisuperapp.tokowebku.com/produk/axis-data-mini-5-gb-7-hari-795361'", "'https://piblisuperapp.tokowebku.com/produk/axis-data-mini-1-gb-7-hari-795366'", "'https://piblisuperapp.tokowebku.com/produk/axis-data-mini-5-gb-5-hari-795369'", "'https://piblisuperapp.tokowebku.com/produk/axis-data-mini-1-5-gb-5-hari-795374'", "'https://piblisuperapp.tokowebku.com/produk/axis-data-mini-4-gb-3-hari-795375'", "'https://piblisuperapp.tokowebku.com/produk/axis-data-mini-1-5-gb-3-hari-795379'",];
+    let pilDeskripKateAxis3 = ["'Axis Data Mini 5 GB / 15 Hari'", "'Axis Data Mini 3 GB / 15 Hari'", "'Axis Data Mini 10 GB / 7 Hari'", "'Axis Data Mini 5 GB / 7 Hari'", "'Axis Data Mini 1 GB / 7 Hari'", "'Axis Data Mini 5 GB / 5 Hari'", "'Axis Data Mini 1,5 GB / 5 Hari'", "'Axis Data Mini 4 GB / 3 Hari'", "'Axis Data Mini 1,5 GB / 3 Hari'",];
+    let pilNamaKateAxis4 = ["Soon",];
+    let pilHargaKateAxis4 = ["Soon",];
+    let pilUrlKateAxis4 = ["'# '",];
+    let pilDeskripKateAxis4 = ["' # '",];
+    let pilNamaKateAxis5 = ["Soon ",];
+    let pilHargaKateAxis5 = ["Soon",];
+    let pilUrlKateAxis5 = ["' # '",];
+    let pilDeskripKateAxis5 = ["' Soon '",];
+    let pilNamaKateAxis6 = ["Soon",];
+    let pilHargaKateAxis6 = ["Sold Out",];
+    let pilUrlKateAxis6 = ["' # '",];
+    let pilDeskripKateAxis6 = ["' soon '",];
+    let pilNamaKateAxis7 = ["Soon",];
+    let pilHargaKateAxis7 = ["Soon",];
+    let pilUrlKateAxis7 = ["' # '",];
+    let pilDeskripKateAxis7 = ["' Soon '",];
+    let pilNamaKateXl2 = ["Xtra Combo 35 GB + 70 GB 30 Hari", "Xtra Combo 20 GB + 40 GB 30 Hari", "Xtra Combo 15 GB + 30 GB 30 Hari", "Xtra Combo 10 GB + 20 GB 30 Hari", "Xtra Combo 5 GB + 10 GB 30 Hari", "Xtra Combo 14 GB 30 Hari", "Xtra Combo 8 GB 30 Hari",];
+    let pilHargaKateXl2 = ["Rp.216.600 ", "Rp.151.100 ", "Rp.111.100 ", "Rp.76.600 ", "Rp.53.200 ", "Rp.31.600 ", "Rp.21.600 ",];
+    let pilUrlKateXl2 = ["'https://piblisuperapp.tokowebku.com/produk/xtra-combo-35-gb-70-gb-30-hari-795504'", "'https://piblisuperapp.tokowebku.com/produk/xtra-combo-20-gb-40-gb-30-hari-795507'", "'https://piblisuperapp.tokowebku.com/produk/xtra-combo-15-gb-30-gb-30-hari-795513'", "'https://piblisuperapp.tokowebku.com/produk/xtra-combo-10-gb-20-gb-30-hari-795515'", "'https://piblisuperapp.tokowebku.com/produk/xtra-combo-5-gb-10-gb-30-hari-795517'", "'https://piblisuperapp.tokowebku.com/produk/xtra-combo-14-gb-30-hari-795522'", "'https://piblisuperapp.tokowebku.com/produk/xtra-combo-8-gb-30-hari-795526'",];
+    let pilDeskripKateXl2 = ["'Xtra Combo 35 GB + 70 GB 30 Hari'", "'Xtra Combo 20 GB + 40 GB 30 Hari'", "'Xtra Combo 15 GB + 30 GB 30 Hari'", "'Xtra Combo 10 GB + 20 GB 30 Hari'", "'Xtra Combo 5 GB + 10 GB 30 Hari'", "'Xtra Combo 14 GB 30 Hari'", "'Xtra Combo 8 GB 30 Hari'",];
+    let pilNamaKateXl3 = ["Xtra Combo Vip 35 GB + 70 GB 30 Hari", "Xtra Combo Vip 20 GB + 40 GB 30 Hari", "Xtra Combo Vip 15 GB + 30 GB 30 Hari", "Xtra Combo Vip 10 GB + 20 GB 30 Hari", "Xtra Combo Vip 5 GB + 10 GB 30 Hari",];
+    let pilHargaKateXl3 = ["Rp.219.600 ", "Rp.165.600 ", "Rp.120.000 ", "Rp.89.300 ", "Rp.62.600 ",];
+    let pilUrlKateXl3 = ["'https://piblisuperapp.tokowebku.com/produk/xtra-combo-vip-35-gb-70-gb-30-hari-795483'", "'https://piblisuperapp.tokowebku.com/produk/xtra-combo-vip-20-gb-40-gb-30-hari-795486'", "'https://piblisuperapp.tokowebku.com/produk/xtra-combo-vip-15-gb-30-gb-30-hari-795492'", "'https://piblisuperapp.tokowebku.com/produk/xtra-combo-vip-10-gb-20-gb-30-hari-795499'", "'https://piblisuperapp.tokowebku.com/produk/xtra-combo-vip-5-gb-10-gb-30-hari-795501'",];
+    let pilDeskripKateXl3 = ["'Xtra Combo Vip 35 GB + 70 GB 30 Hari'", "'Xtra Combo Vip 20 GB + 40 GB 30 Hari'", "'Xtra Combo Vip 15 GB + 30 GB 30 Hari'", "'Xtra Combo Vip 10 GB + 20 GB 30 Hari'", "'Xtra Combo Vip 5 GB + 10 GB 30 Hari'",];
+    let pilNamaKateXl4 = ["Soon",];
+    let pilHargaKateXl4 = ["Soon",];
+    let pilUrlKateXl4 = ["' # '",];
+    let pilDeskripKateXl4 = ["' Soon '",];
+    let pilNamaKateXl5 = ["Soon",];
+    let pilHargaKateXl5 = ["Soon",];
+    let pilUrlKateXl5 = ["' #'",];
+    let pilDeskripKateXl5 = ["' Soon'",];
+    let pilNamaKateXl6 = ["Soon",];
+    let pilHargaKateXl6 = ["Sold Out",];
+    let pilUrlKateXl6 = ["' # '",];
+    let pilDeskripKateXl6 = ["' soon '",];
+    let pilNamaKateXl7 = ["Soon",];
+    let pilHargaKateXl7 = ["Soon",];
+    let pilUrlKateXl7 = ["'# '",];
+    let pilDeskripKateXl7 = ["' Soon '",];
+    function ulangi(divKate, nama, harga, url, deskripsi) {
+      let konten = divKate;
+      let barang = "";
+      let x;
+      for (let x = 0; x < nama.length; x++) {
+        barang += ('<div onclick="pilihBarang(' + " ' " + '' + harga[+x].replace(/["]+/g) + '' + " ' " + ' ,' + url[+x] + ')" class="cardData"><div class="pHarga esaku-effect"><h3>' + nama[+x] + '</h3><h4>' + harga[+x] + '</h4></div><div class="deskripsiProduk"></div><div onclick="deskripsiBarang(' + deskripsi[+x] + ')" class="cardShow " data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" ><p class="esaku-effect">Lihat Detail</p></div></div>');
+      }
+      konten.innerHTML = barang;
+    } ulangi(cetakKategoriIndosat1, pilNamaKateIndosat2, pilHargaKateIndosat2, pilUrlKateIndosat2, pilDeskripKateIndosat2);
+    ulangi(cetakKategoriIndosat2, pilNamaKateIndosat3, pilHargaKateIndosat3, pilUrlKateIndosat3, pilDeskripKateIndosat3);
+    ulangi(cetakKategoriIndosat3, pilNamaKateIndosat4, pilHargaKateIndosat4, pilUrlKateIndosat4, pilDeskripKateIndosat4);
+    ulangi(cetakKategoriIndosat4, pilNamaKateIndosat5, pilHargaKateIndosat5, pilUrlKateIndosat5, pilDeskripKateIndosat5);
+    ulangi(cetakKategoriIndosat5, pilNamaKateIndosat6, pilHargaKateIndosat6, pilUrlKateIndosat6, pilDeskripKateIndosat6);
+    ulangi(cetakKategoriIndosat6, pilNamaKateIndosat7, pilHargaKateIndosat7, pilUrlKateIndosat7, pilDeskripKateIndosat7);
+    ulangi(cetakKategoriSimpati1, pilNamaKateSimpati2, pilHargaKateSimpati2, pilUrlKateSimpati2, pilDeskripKateSimpati2);
+    ulangi(cetakKategoriSimpati2, pilNamaKateSimpati3, pilHargaKateSimpati3, pilUrlKateSimpati3, pilDeskripKateSimpati3);
+    ulangi(cetakKategoriSimpati3, pilNamaKateSimpati4, pilHargaKateSimpati4, pilUrlKateSimpati4, pilDeskripKateSimpati4);
+    ulangi(cetakKategoriSimpati4, pilNamaKateSimpati5, pilHargaKateSimpati5, pilUrlKateSimpati5, pilDeskripKateSimpati5);
+    ulangi(cetakKategoriSimpati5, pilNamaKateSimpati6, pilHargaKateSimpati6, pilUrlKateSimpati6, pilDeskripKateSimpati6);
+    ulangi(cetakKategoriSimpati6, pilNamaKateSimpati7, pilHargaKateSimpati7, pilUrlKateSimpati7, pilDeskripKateSimpati7);
+    ulangi(cetakKategoriTri1, pilNamaKateTri2, pilHargaKateTri2, pilUrlKateTri2, pilDeskripKateTri2);
+    ulangi(cetakKategoriTri2, pilNamaKateTri3, pilHargaKateTri3, pilUrlKateTri3, pilDeskripKateTri3);
+    ulangi(cetakKategoriTri3, pilNamaKateTri4, pilHargaKateTri4, pilUrlKateTri4, pilDeskripKateTri4);
+    ulangi(cetakKategoriTri4, pilNamaKateTri5, pilHargaKateTri5, pilUrlKateTri5, pilDeskripKateTri5);
+    ulangi(cetakKategoriTri5, pilNamaKateTri6, pilHargaKateTri6, pilUrlKateTri6, pilDeskripKateTri6);
+    ulangi(cetakKategoriTri6, pilNamaKateTri7, pilHargaKateTri7, pilUrlKateTri7, pilDeskripKateTri7);
+    ulangi(cetakKategoriAxis1, pilNamaKateAxis2, pilHargaKateAxis2, pilUrlKateAxis2, pilDeskripKateAxis2);
+    ulangi(cetakKategoriAxis2, pilNamaKateAxis3, pilHargaKateAxis3, pilUrlKateAxis3, pilDeskripKateAxis3);
+    ulangi(cetakKategoriAxis3, pilNamaKateAxis4, pilHargaKateAxis4, pilUrlKateAxis4, pilDeskripKateAxis4);
+    ulangi(cetakKategoriAxis4, pilNamaKateAxis5, pilHargaKateAxis5, pilUrlKateAxis5, pilDeskripKateAxis5);
+    ulangi(cetakKategoriAxis5, pilNamaKateAxis6, pilHargaKateAxis6, pilUrlKateAxis6, pilDeskripKateAxis6);
+    ulangi(cetakKategoriAxis6, pilNamaKateAxis7, pilHargaKateAxis7, pilUrlKateAxis7, pilDeskripKateAxis7);
+    ulangi(cetakKategoriXl1, pilNamaKateXl2, pilHargaKateXl2, pilUrlKateXl2, pilDeskripKateXl2);
+    ulangi(cetakKategoriXl2, pilNamaKateXl3, pilHargaKateXl3, pilUrlKateXl3, pilDeskripKateXl3);
+    ulangi(cetakKategoriXl3, pilNamaKateXl4, pilHargaKateXl4, pilUrlKateXl4, pilDeskripKateXl4);
+    ulangi(cetakKategoriXl4, pilNamaKateXl5, pilHargaKateXl5, pilUrlKateXl5, pilDeskripKateXl5);
+    ulangi(cetakKategoriXl5, pilNamaKateXl6, pilHargaKateXl6, pilUrlKateXl6, pilDeskripKateXl6);
+    ulangi(cetakKategoriXl6, pilNamaKateXl7, pilHargaKateXl7, pilUrlKateXl7, pilDeskripKateXl7); </script>
+</body>
+
+</html>

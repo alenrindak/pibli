@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      .mybutton1 {
+        float: center;
+        border-radius: 13px;
+        padding: 30px;
+        z-index: 1;
+        width: 95%;
+        height: 70px;
+        top: 60px;
+        right: 2.5%;
+        left: 2.5%;
+        background: #fff;
+      }
+      .gambar {
+        box-shadow: 0px 0px 6px -2px rgba(0, 0, 0, 0.4);
+        width: 35px;
+        right: 27px;
+        position: absolute;
+        top: 13px;
+        border-radius: 7px;
+      }
+      .makan99 {
+        font-family: "urbanist", sans-serif;
+        color: #b71c1c;
+        margin-top: -13px;
+        font-size: 14px;
+        margin-left: 38px;
+        font-weight: bold;
+      }
+      .admin {
+        position: absolute;
+        color: #b71c1c;
+        font-size: 15px;
+        font-family: arial;
+        text-decoration: none;
+        box-shadow: 0px 0px 1px 1px rgba(0, 0, 0, 0);
+        font-weight: bold;
+        padding: 6px 1px 0px 0px;
+      }
+    </style>
+    <title>Document</title>
+  </head>
+  <body>
+    <!--NAMA USER-->
+    <div class="mybutton1" style="position: absolute;z-index: 1;">
+    <a href="https://sanpediaa.jualan.me/akun/?page=profil">     			
+    <img class="gambar" style="box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.0);z-index: 30;border-radius: 50px;left: 14px;width:45px;top: 14px;position: absolute;" src="{{foto_profil}}"></a>
+                    
+                    
+      <div class="makan99">Nama : {{nama_user}}</div>
+    <div class="admin99" id="saldo_user" style="z-index: 0;padding-buttom:10000000px;">{{saldo_user}}</div>
+    
+    <!--ICON DEPOSIT-->
+    <a onclick="httpskiosidbukaolshopsiteakunlogin()"><a href="https://elaypay.webtoko.net/akun/?page=topup"><img class="gambar" style="right: 20px;" src="https://i.ibb.co/0y1rfsh/images-5.png" alt="20211123-093156" border="0"></a>
+    </div>
+    
+    <div class="admin" id="gambar" style="z-index: 1;right: 27px;font-size: 11px;color: #595959; position: absolute;top: 105px;padding-buttom:10000000px;font-family:'urbanist', sans-serif;">Deposit</div>    	
+        
+    
+  </body>
+</html>
